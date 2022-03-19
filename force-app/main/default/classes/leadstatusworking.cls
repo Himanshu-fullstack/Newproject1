@@ -1,5 +1,5 @@
 public with sharing class leadstatusworking {
-    public leadstatusworking() {
-
-    }
+  public static void leadstatusworking() {
+    system.debug('Hello');
+  }
 }
