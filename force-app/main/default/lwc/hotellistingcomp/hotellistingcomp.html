@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="abcnd" icon-name="custom:custom39">
+    <template if:true={listHotel}>
+      <lightning-datatable
+        data={listHotel}
+        columns={columns}
+        key-field="Id"
+      ></lightning-datatable>
+    </template>
+    <lightning-button
+      label="Proceed for Payment"
+      onclick={buttonHander}
+      variant="brand"
+      icon-name="custom:custom28"
+    ></lightning-button>
+    <c-paymentcomponent></c-paymentcomponent>
+  </lightning-card>
+</template>

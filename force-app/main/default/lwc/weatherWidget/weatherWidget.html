@@ -1,0 +1,10 @@
+<template>
+    
+    <lightning-card title="Weather Widget" icon-name="custom:custom97">
+    
+    <div class="slds-p-around_medium lgc-bg" style="text-align:center;"><lightning-input style="padding-left: 370px;padding-right: 370px;" label="Enter city" name="cityname" onchange={inputHandler}></lightning-input></div>
+    <div  style="text-align:center;"><lightning-button label="Show weather" variant="destructive" name="weather" icon-name="standard:feed" onclick={weatherTemp}></lightning-button></div>
+    <div class="slds-p-around_medium lgc-bg" style="color:grey;text-align:center;">{mainoutput}</div>
+    </lightning-card>
+
+</template>

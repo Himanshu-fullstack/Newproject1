@@ -1,0 +1,34 @@
+<template>
+  <lightning-card title="STOPWATCH" icon-name="custom:custom95">
+    <div class="slds-m-around_medium">
+      <h1>{time}</h1>
+      <p>{counter}</p>
+      <template if:true={startButton}>
+        <lightning-button
+          label="START"
+          variant="success"
+          onclick={START}
+        ></lightning-button>
+      </template>
+      <lightning-button-group>
+        <template if:false={displayitem}>
+          <lightning-button
+            label="STOP"
+            variant="destructive"
+            onclick={STOP}
+          ></lightning-button>
+        </template>
+        <lightning-button
+          label="RESET"
+          variant="brand"
+          onclick={RESET}
+        ></lightning-button>
+        <lightning-button
+          label="PAUSE"
+          variant="neutral"
+          onclick={PAUSE}
+        ></lightning-button>
+      </lightning-button-group>
+    </div>
+  </lightning-card>
+</template>

@@ -1,0 +1,59 @@
+<template>
+  <lightning-card
+    title="Real Time currency converter"
+    icon-name="custom:custom17"
+  >
+    <template if:true={display}>
+      <div class="container">
+        <div class="text">
+          <span>1 {curren} equals to </span>
+          <span style="font-size: 15pt; color: rgb(22, 230, 67)"
+            >{exchangeRateValue} {tocurren}</span
+          >
+        </div>
+      </div>
+    </template>
+    <lightning-input
+      class="slds-m-around_medium"
+      label="Enter the value"
+      onchange={inputHandler}
+    >
+    </lightning-input>
+    <lightning-combobox
+      name="progress"
+      label="From"
+      value="abcd"
+      options={options}
+      onchange={handleChange}
+      class="slds-m-around_medium"
+    >
+    </lightning-combobox>
+
+    <lightning-combobox
+      name="progress1"
+      label="To"
+      value="abcd1"
+      options={options1}
+      onchange={toChange}
+      class="slds-m-around_medium"
+    >
+    </lightning-combobox>
+
+    <lightning-button
+      class="slds-m-around_medium"
+      style="margin-top: 10pt"
+      label="Convert Currency"
+      onclick={buttonHandler}
+      icon-name="custom:custom66"
+      variant="success"
+    ></lightning-button>
+    <template if:true={display1}>
+      <div
+        class="slds-m-around_medium"
+        style="font-size: 20pt; color: rgb(22, 230, 67)"
+      >
+        Value--{finalValueAfterConversion}
+      </div>
+    </template>
+  </lightning-card>
+</template>

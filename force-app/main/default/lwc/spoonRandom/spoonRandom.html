@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Himan and Ash Kitchen" icon-name="custom:custom51">
+
+        <lightning-button variant="success" label="Random Recipe" onclick={buttonHandler}></lightning-button><br><br>
+   
+        <h1 style="font-size: 60px; text-align:center;color:green" >{recipeTitle}</h1><br>
+        <img src={image} width="500" style="margin-left: 160px;"> <br>            
+        <!-- <div style="font-size: 20px;">{summary}</div><br> -->
+        <b style="font-size: 15px;">{bold}</b><br>
+        <div style="font-size: 20px;">{instructions}</div>
+
+    </lightning-card>
+    
+    
+</template>

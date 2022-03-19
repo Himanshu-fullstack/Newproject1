@@ -1,0 +1,32 @@
+<aura:component controller="TrainingMasterDealComponentClass" implements="flexipage:availableforAllPageTypes" access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="DealAttribute" type="Training_Deals__c[]" />
+    <div>Data of Training Deal and Trainer Master</div>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Course Name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Trainer_Appointed__c
+            </th>
+        </tr>
+    </thead>
+    <aura:iteration items="{!v.DealAttribute}" var="cmp1">
+    <tbody>
+            
+            <tr>
+                <td>{!cmp1.Course__c}</td>
+                <td>{!cmp1.Name}</td>
+                <td>{!cmp1.Trainer_Appointed__c}</td>
+            </tr>
+        </tbody>
+    </aura:iteration>
+</table>
+
+</aura:component>

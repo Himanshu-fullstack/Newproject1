@@ -1,0 +1,36 @@
+<aura:component controller="AxisDisplayAccountComponentClass" implements="flexipage:availableforAllPageTypes" access="global">
+<!--calling doInint method in component Controller-->
+<!--this is used to perform some activity as soon as the component loads-->
+
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+<!--create array type account variable-->
+<aura:attribute name="accList" type="Account[]" />
+
+<!--This is used to shoe a card at the top as header-->
+<table>
+  <thead>
+      <tr>
+        <th>
+          <strong>Name</strong> 
+        </th>
+        <th>
+           <strong>Type</strong>
+        </th>
+        <th>
+           <strong>Phone</strong>
+        </th>
+      </tr>
+      
+  </thead>  
+  <tbody>
+<aura:iteration items = "{!v.accList}" var="acc" >
+    <tr>
+        <td>{!acc.Name}</td>
+        <td>{!acc.Type}</td>
+        <td>{!acc.Phone}</td>
+    </tr>
+</aura:iteration>  
+  </tbody>
+</table>
+</aura:component>

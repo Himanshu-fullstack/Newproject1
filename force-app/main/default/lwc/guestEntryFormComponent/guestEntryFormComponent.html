@@ -1,0 +1,121 @@
+<template>
+  <template if:true={display}>
+    <lightning-card title="Guest Entry Form" icon-name="custom:custom33">
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="Text"
+            name="Fname"
+            label="Enter First name"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="Text"
+            label="Enter Last name"
+            name="lname"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="number"
+            label="Enter Phone Number"
+            name="phone"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="text"
+            label="Enter Email"
+            name="email"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="number"
+            label="Enter Number of adults(12 yrs+)"
+            onchange={inputHandler}
+            name="numberOfAdults"
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="number"
+            label="Enter Number of children(0-12 yrs)"
+            onchange={inputHandler}
+            name="numOfChild"
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="date"
+            label="Check in Date"
+            name="checkin"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="date"
+            label="Check out Date"
+            name="checkout"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="6">
+          <lightning-input
+            type="text"
+            label="City of Hotel"
+            name="cityOfHotel"
+            onchange={inputHandler}
+            class="slds-m-around_medium"
+          ></lightning-input
+        ></lightning-layout-item>
+        <lightning-layout-item size="6">
+          <lightning-combobox
+            name="hotel"
+            label="Preferred Hotel Type"
+            value="abcd"
+            options={options1}
+            onchange={comboHandler}
+            class="slds-m-around_medium"
+          >
+          </lightning-combobox>
+        </lightning-layout-item>
+      </lightning-layout>
+      <lightning-button
+        label="Save"
+        icon-name="custom:custom88"
+        onclick={buttonHandler}
+        class="slds-m-around_medium"
+        variant="Brand"
+      ></lightning-button>
+    </lightning-card>
+  </template>
+  <template if:false={display}>
+    <c-hotellistingcomp
+      city={cityOfHotel}
+      type={hoteltype}
+    ></c-hotellistingcomp>
+  </template>
+</template>

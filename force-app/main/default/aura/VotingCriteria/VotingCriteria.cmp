@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute type="boolean" name="Eligibility"  default="false" />
+ <ui:inputText label="FullName" aura:id="Fname" placeholder="Enter your first Name" />
+ <ui:inputNumber label="Age" aura:id="age1" placeholder="Please Enter your Age" />
+ <ui:button label="Check Eligibility" aura:id="ce1" press="{!c.checkelig}" />
+ 
+
+ <ui:outputText aura:id="output1" value="" />
+ <aura:if isTrue="{!v.Eligibility}" >
+ You are eligible for vote 
+ <ui:button label="Press here to vote" />
+ <aura:set attribute="else">
+
+ 
+ You are not eligible for vote     
+ 
+</aura:set>
+</aura:if>
+</aura:component>	

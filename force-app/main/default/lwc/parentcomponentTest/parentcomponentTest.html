@@ -1,0 +1,25 @@
+<template>
+  <lightning-card
+    title="ParentComponentDataTransfer"
+    icon-name="custom:custom88"
+  >
+    <!-- <lightning-input 
+    label="Enter First Name" 
+    name="Fname" 
+    onchange={inputHandler}>
+
+    </lightning-input>
+
+    <lightning-input 
+    label="Enter Last Name" 
+    name="Lname" 
+    onchange={inputHandler}>
+    </lightning-input> -->
+    <div>{sum1}</div>
+
+    <div style="font-size: large">We will transfer that data to child comp</div>
+
+    <c-child-component-test oncustomeventlatest={valueHandler}>
+    </c-child-component-test>
+  </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Discount Calculator" icon-name="custom:custom18">
+        <lightning-input label="Number of Students" name="nos" onchange={inputHandler}></lightning-input>
+        <lightning-input label="Number of Courses" name="noc" onchange={inputHandler}></lightning-input>
+        <lightning-button label="Calculate Discount" onclick={discounButtonHandler}></lightning-button>
+   <div>{discountCalculation}</div>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="Child Component" icon-name="custom:custom33">
+    <div>This is in child comp</div>
+    <h1>Kindly enter two Numbers Below</h1>
+    <lightning-input
+      label="First Number"
+      type="number"
+      name="fir"
+      onchange={inputHandler}
+    ></lightning-input>
+
+    <lightning-input
+      label="Second Number"
+      type="number"
+      name="sec"
+      onchange={inputHandler}
+    ></lightning-input>
+
+    <lightning-button
+      label="Send Sum data to Parent"
+      onclick={buttonHandler}
+      icon-name="custom:custom11"
+    >
+    </lightning-button>
+    <!-- <div>{fullname}</div> -->
+  </lightning-card>
+</template>

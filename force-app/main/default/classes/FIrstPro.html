@@ -1,0 +1,40 @@
+<!DOCTYPE html><!--This tells it supports HTML 5-->
+<html>
+    <head><!---This contains meta information about web page-->
+    <Title>My first Page(Tab m jo likha aata h )--></Title>
+    <link rel="stylesheet" href="./FIrstPro.CSS" />
+    </head>
+<script>
+    //alert('Aaankehin nikaal ke goti khelta hu')
+    function loadDoc() {
+    
+        const a = new XMLHttpRequest();
+        a.onload = function() {
+          myfunction(this.responseText);
+        }
+        a.open("GET", "http://api.weatherstack.com/current?access_key=42775452aa75c66a1caf1ae54418788d&query=delhi");
+        a.send();
+      }
+      function myfunction(res){
+          let a = JSON.parse(res);
+          //alert(a.current);
+        console.log(a.current.temperature);
+        document.getElementById("dd").innerHTML =res;
+      }
+</script>
+    <body> 
+        <h1>Hello delhi</h1>
+        <p id="dd"></p>
+        <button onClick="loadDoc()" id="demo">click</button>
+    <div  > This is my life <a href="https://www.salesforce.com">Go to salesforce</a>and my rule </div>
+    <div> This is my life and my rule <Strong>         This is my life and my ruke</Strong></div>
+
+    <p>Add the <span class="ingredient">basil</span>, <span class="ingredient">pine nuts</span> and <span class="ingredient">garlic</span> to a blender and blend into a paste.</p>
+
+<p>Gradually add the <span class="ingredient">olive oil</span> while running the blender slowly.</p>
+    
+
+  
+
+    </body>
+</html>

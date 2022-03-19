@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="BMI Calculator" icon-name="standard:service_request_detail">
+   <lightning-button label="Calculate BMI for free" onclick={displayForm} ></lightning-button>
+   <template if:true={displayvalue}>
+        <lightning-input label="Weight" name="weight1" placeholder="Please enter your weight" 
+   onchange={datahandler}></lightning-input> 
+   <lightning-input label="Height" name="height1" placeholder="Please enter your Height" 
+   onchange={datahandler}></lightning-input>
+   <lightning-button label="Calculate BMI" variant="success" onclick={bmiCalculator} style="color: aqua;" icon-name="standard:unified_health_score"></lightning-button>
+ <p style="color: green;">{finalbmi}</p>
+ <lightning-button label="Close form" onclick={CloseForm} ></lightning-button>
+
+</template>
+<h3 style="color:brown">Previous Results</h3>
+<template for:each={arrayofrecords} for:item="arr">
+<li key={arr}>
+ {arr}
+</li>
+</template>
+</lightning-card>
+</template>

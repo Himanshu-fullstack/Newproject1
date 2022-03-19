@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+<aura:attribute name="Hello" type="String" default="Hello" />
+<aura:attribute name="Yolo"  type="Integer"  default="12" />
+<aura:attribute name="Bool" type="Boolean" default="True" />
+
+{!v.Hello}{!v.Yolo}{!v.Bool}
+</aura:component>	

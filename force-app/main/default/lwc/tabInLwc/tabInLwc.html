@@ -1,0 +1,25 @@
+<template>
+    
+    <lightning-card title="Lightning Tab in Lwc" icon-name="custom:custom28">
+    <lightning-button-group>
+        <lightning-button variant="success" label="Button1" onclick={buttonHandler}></lightning-button>
+    <lightning-button variant="brand" label="Button2" onclick={buttonHandler}></lightning-button>
+    <lightning-button variant="neutral" label="Button3" onclick={buttonHandler}></lightning-button>
+    <lightning-button  variant="destructive" label="Button4" onclick={buttonHandler}></lightning-button>
+</lightning-button-group>
+    <lightning-tabset variant="vertical">
+        <template if:true={varTabOne}>
+            <lightning-tab label="Item 1">Content for button1</lightning-tab>
+        </template>
+ <template if:true={varTabtwo}>
+     <lightning-tab label="Item 2">content for button2</lightning-tab>
+ </template>
+ <template if:true={varTab3}>
+    <lightning-tab label="Item 3">content for button3</lightning-tab>
+</template>
+<template if:true={varTab4}>
+    <lightning-tab label="Item 4">content for button4</lightning-tab>
+</template>
+    </lightning-tabset>
+    </lightning-card>
+</template>

@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+<aura:attribute name="mode" type="String" default="hard" />
+<aura:attribute name="columnsize" type="Integer" />
+<aura:attribute name="Words" type="List" />
+<aura:attribute name="winWord" type="String" />
+<aura:attribute name="clickCount" type="Integer" default="0" />
+<aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+<aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.blockClickHandler}" />
+<aura:attribute name="result" type="String" />
+<aura:attribute name="boardDisabled" type="Boolean" default="false" />
+<aura:method name="startGame" action="{!c.doinit}" description="Start new game"> </aura:method>
+    
+<div class="board">
+<lightning:layout>
+    <lightning:layoutItem   padding="around-small">
+         <div class="slds-text-heading_medium"> WORD : <span class="Win-Word">{!v.winWord}</span></div>
+        </lightning:layoutItem>
+
+        <lightning:layoutItem   padding="around-small">
+            <div class="slds-text-heading_medium"> RESULT :{!v.result}</div>
+           </lightning:layoutItem>
+
+        <lightning:layoutItem   padding="around-small">
+           <div class="slds-text-heading_medium">
+               MOVES LEFT : {! (3-v.clickCount)}
+            </div>
+        </lightning:layoutItem>
+</lightning:layout>
+<aura:if isTrue="{!v.boardDisabled}">
+<div class="board-disabled"> </div>
+</aura:if>
+<lightning:layout multipleRows="true">     
+   <aura:iteration items="{!v.Words}" var="word">
+        <lightning:layoutItem  size="{!v.columnsize}" padding="around-small">
+        <c:Block label="{!word}"></c:Block>
+        </lightning:layoutItem>
+
+    </aura:iteration>
+    </lightning:layout>
+
+</div>
+</aura:component>	

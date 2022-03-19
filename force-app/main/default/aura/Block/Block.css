@@ -1,0 +1,19 @@
+.THIS.board-block {
+    height: 80px;
+    background-color: white;
+    border: 12px white;
+    TEXT-TRANSFORM: UPPERCASE;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    box-shadow: 10px 10px 8px #888888;
+    transition:all 0.5sec;
+}
+
+.THIS.board-block:hover {
+    background-color: rgb(226, 222, 222);
+    border: 1px solid rgb(226, 222, 222);
+    
+}

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="SI CALCULATOR" icon-name="action:quote">
+        <lightning-input type="number" label="Principal" name="prin" onchange={inputHandler} ></lightning-input>
+        <lightning-input type="number" label="Time" name="time" onchange={inputHandler} ></lightning-input>
+        <lightning-input type="number" label="Rate of Interest" name="roi" onchange={inputHandler} ></lightning-input>
+   <lightning-button label="Calculate SI" variant="success" onclick={abcd} ></lightning-button>
+  <lightning-formatted-text value={sivalue}></lightning-formatted-text>
+    </lightning-card>
+</template>

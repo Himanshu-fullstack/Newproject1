@@ -1,0 +1,41 @@
+<template>
+  <lightning-layout>
+    <lightning-layout-item class="slds-p-around_medium" size="6">
+      <lightning-input
+        type="number"
+        label="Card Number"
+        name="cn"
+        onchange={inputHandler}
+        placeholder="Type Here"
+      ></lightning-input>
+      <lightning-input
+        type="number"
+        label="Expiry Month"
+        name="em"
+        onchange={inputHandler}
+        placeholder="Month in number MM format"
+      ></lightning-input>
+      <lightning-input
+        type="number"
+        label="Expiry Year"
+        name="ey"
+        onchange={inputHandler}
+        placeholder="Last two number YY format"
+      ></lightning-input>
+      <lightning-input
+        type="number"
+        label="CVV"
+        name="cvv"
+        onchange={inputHandler}
+        placeholder="Three number format"
+      ></lightning-input>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <lightning-button
+    variant="success"
+    label="Submit"
+    class="slds-p-around_medium"
+    onclick={buttonHandler}
+  ></lightning-button>
+</template>

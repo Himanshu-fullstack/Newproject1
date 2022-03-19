@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableforAllPageTypes" access="global">
+    <ui:inputNumber label="First Number" aura:id="FNumber" placeholder="Enter the first Number" />
+    <ui:inputNumber label="Second Number" aura:id="SNumber" placeholder="Enter the Second Number" />
+    <ui:button label="Addition(+)" aura:id="Abutton" press="{!c.Addition}" />
+    <ui:button label="Multiplication(+)" aura:id="Mbutton" press="{!c.Multiplication}" />
+    <ui:button label="Division(+)" aura:id="Dbutton" press="{!c.Division}" />
+    <ui:button label="Subtraction(+)" aura:id="Sbutton" press="{!c.Subtraction}" />
+    <br></br>
+    <ui:outputText aura:id="Outputofquery" value="" />
+
+
+</aura:component>

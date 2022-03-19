@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+<ui:inputText label="First Name" aura:id="Fname" placeholder="Enter First Name" />
+<ui:inputText label="Last Name" aura:id="Lname"  placeholder="Enter Last Name" />
+<ui:inputText label="Gender" aura:id="gen" placeholder="Please enter the gender" />
+<ui:button       label="Submit" aura:id="CombineNames" press="{!c.getName}" />
+<ui:outputText  aura:id="CombinedName" value="" />
+</aura:component>

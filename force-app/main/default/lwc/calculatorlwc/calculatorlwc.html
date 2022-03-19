@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Calculator" icon-name="utility:animal_and_nature">
+        <lightning-input label="Enter the First Number" name="first"  onchange={inputHandler}></lightning-input>
+        <lightning-input label="Enter the Second Number"  name="second" onchange={inputHandler}></lightning-input>
+        <lightning-button variant="brand" label="Addition" onclick={Addition} icon-name="utility:add" icon-position="right"></lightning-button>
+        <lightning-button variant="success" label="Subtraction(-)" onclick={Subtraction}></lightning-button>
+        <lightning-button variant="destructive" label="Multiplication(*)" onclick={Multiplication}></lightning-button>
+        <lightning-button variant="neutral" label="Division(/)" onclick={Division}></lightning-button>
+        <p>{Calculate}</p>
+    </lightning-card>
+    
+</template>

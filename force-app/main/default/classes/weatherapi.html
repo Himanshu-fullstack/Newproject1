@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function weatherTemp(){
+                const a = new XMLHttpRequest();
+                a.onload = function() {
+    //document.getElementById("demo").innerHTML = this.responseText;
+    weatherresponseHandler(this.responseText);
+  }
+  a.open("GET", `http://api.weatherstack.com/current?access_key=42775452aa75c66a1caf1ae54418788d&query=`);
+  a.send();
+            }
+  
+  function weatherresponseHandler(abcd){
+      let a = JSON.parse(abcd);
+      document.getElementById("temp").innerHTML = a.current.temperature;
+      document.getElementById("city").innerHTML = a.location.name;
+      console.log(a);
+      console.log(a.current.temperature);
+  }          
+        </script>
+    </head>
+    <body>
+        <div id="demo" >Hello this is before getting data from api.</div>
+   Enter city<input type="text" id="city1" />
+        <div>Temperature in <span id="city"></span> is <span id="temp"></span></div>
+        <button onClick="weatherTemp()">click here for waether info</button>
+    </body>
+</html>
