@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Security Demo" icon-name="custom:custom88">
+    <lightning-input
+      label="Enter Account Name"
+      onchange={inputHandler}
+    ></lightning-input>
+    <lightning-button
+      label="Fetch Opportunity Records"
+      onclick={buttonHandler}
+    ></lightning-button>
+    <template for:each={listOfRecords} for:item="records">
+      <div key={records.ID}>{records.name} {records.Credit_Card_Number__c}</div>
+    </template>
+  </lightning-card>
+</template>
