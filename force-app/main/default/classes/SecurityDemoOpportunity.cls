@@ -1,12 +1,24 @@
-public without sharing class SecurityDemoOpportunity {
+public with sharing class SecurityDemoOpportunity {
   @AuraEnabled
   public static List<Opportunity> getOppRecords(String accName) {
-    List<Opportunity> oppRecords = [
-      SELECT ID, name, StageName, Credit_Card_Number__c, Name_on_Credit_Card__c
-      FROM Opportunity
-      WHERE account.name = :accName
-    ];
+    // List<Opportunity> oppRecords = [
+    //   SELECT ID, name, StageName,Credit_Card_Number__c,
+    //   FROM Opportunity
+    //   WHERE account.name = :accName
+    // ];
 
-    return oppRecords;
+    // if(Schema.sObjectType.Opportunity.fields.Credit_Card_Number__c.isAccessible()){
+    // return oppRecords;
+
+    String Soql = 'Select ID,name,Stagename';
+    if (
+      Schema.sObjectType.Opportunity.fields.Credit_Card_Number__c.isAccessible()
+    ) {
+      soql = soql + ',Credit_Card_Number__c';
+    }
+    soql += ' FROM Opportunity';
+    soql += ' WHERE account.name = :accName';
+    System.debug(Database.Query(soql));
+    return Database.Query(soql);
   }
 }

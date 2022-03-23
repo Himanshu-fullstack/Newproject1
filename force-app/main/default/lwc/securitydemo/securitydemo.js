@@ -14,5 +14,6 @@ export default class securityDemoOpportunityComponent extends LightningElement {
     getOppRecords({ accName: this.accountname }).then((data) => {
       this.listOfRecords = data;
     });
+    console.log(this.listOfRecords);
   }
 }
