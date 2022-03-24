@@ -7,8 +7,12 @@ public with sharing class SecurityDemoOpportunity {
       WHERE account.name = :accName
       WITH SECURITY_ENFORCED
     ];
+    SobjectAccessDecision securityDecision = Security.stripInaccessible(
+      AccessType.READABLE,
+      oppRecords
+    );
 
-    return oppRecords;
+    return (Opportunity) securityDecision.getRecords();
 
     // String Soql = 'Select ID,name,Stagename';
     // if (
