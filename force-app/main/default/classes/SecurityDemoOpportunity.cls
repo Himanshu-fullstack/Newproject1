@@ -22,11 +22,7 @@ public with sharing class SecurityDemoOpportunity {
     }
     soql += ' FROM Opportunity';
     soql += ' WHERE account.name = :accName';
-    try {
-      System.debug(soql);
-      return Database.query(soql);
-    } catch (Exception e) {
-      system.debug(e);
-    }
+
+    return Database.query(soql);
   }
 }
