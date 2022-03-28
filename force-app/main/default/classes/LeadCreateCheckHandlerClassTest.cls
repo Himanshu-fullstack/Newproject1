@@ -6,7 +6,7 @@ public with sharing class LeadCreateCheckHandlerClassTest {
     User u = new user();
     u.LastName = 'Test Code';
     u.Email = 'ppark11@gmail.com';
-    u.Alias = 'Tcoaaaa';
+    u.Alias = 'Tcoaa';
     u.Username = 'test1234444@test.com';
     u.CommunityNickname = 'test12';
     u.LocaleSidKey = 'en_US';

@@ -5,10 +5,9 @@ global class UpdateRecords implements Database.Batchable<sObject> {
 
   global void execute(Database.BatchableContext BC, List<account> acc) {
     for (Account accnew : acc) {
-      if (accnew.description == 'Not Available') {
         accnew.description = 'Kindly update the desciption';
       }
-    }
+    
     update acc;
   }
 
