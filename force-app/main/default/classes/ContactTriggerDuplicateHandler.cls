@@ -14,10 +14,10 @@ public with sharing class ContactTriggerDuplicateHandler {
   }
 
   public static void BeforeUpdate(
-    Map<Id, Contact> NewMap,
-    Map<Id, Contact> oldMap
+    Map<Id, Contact> NewMap,//Ashu,ashu@gmail.com---{Ashu,ashu@gmail.com}
+    Map<Id, Contact> oldMap//himanshu,himanshuinlko@gmail.com
   ) {
-    List<Contact> needtoBeChecked = new List<Contact>();
+    List<Contact> needtoBeChecked = new List<Contact>();//empty
 
     for (Contact each : NewMap.Values()) {
       if (
@@ -26,7 +26,7 @@ public with sharing class ContactTriggerDuplicateHandler {
         (each.LastName != oldMap.get(each.Id).LastName ||
         each.email != oldmap.get(each.id).email)
       ) {
-        needtoBeChecked.add(each);
+        needtoBeChecked.add(each);//Ashu,ashu@gmail.com
       }
     }
 
@@ -35,7 +35,7 @@ public with sharing class ContactTriggerDuplicateHandler {
     }
   }
 
-  public static void contactDuplicateMethod(List<Contact> contList) {
+  public static void contactDuplicateMethod(List<Contact> contList) {//Ashu,ashu@gmail.com
     Set<String> setOfLastName = new Set<String>();
     Set<String> setOfEmail = new Set<String>();
 
@@ -46,12 +46,12 @@ public with sharing class ContactTriggerDuplicateHandler {
     List<contact> contListAlreadyInserted = [
       SELECT id, email, Lastname
       FROM contact
-      WHERE lastName IN :setOfLastName AND email IN :setOfEmail
+      WHERE lastName IN :setOfLastName AND email IN :setOfEmail//Ashu,ashu@gmail.com
     ];
     Set<String> setOfLastNameAndEmail = new Set<String>();
 
     for (contact con : contListAlreadyInserted) {
-      setOfLastNameAndEmail.add(con.LastName + con.email);
+      setOfLastNameAndEmail.add(con.LastName + con.email);//Ashuashu@gmail.com
     }
 
     for (contact con : contList) {
