@@ -2,9 +2,11 @@
 global with sharing class CreatethroughPostMan {
      
     @HTTPpost
-    global static string createLeadeMthod(){
+    global static List<lead> createLeadeMthod(){
+      
+        list<lead> l=[Select id,name from lead];
 
-        return 'Ash&Himan_bros_before_hoes';
+        return l;
     }
    }
 
